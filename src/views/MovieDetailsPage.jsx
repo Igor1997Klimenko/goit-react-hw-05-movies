@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams, Outlet, Routes, Route } from "react-router-dom";
+import { useLocation, useNavigate, useParams, Link, Outlet } from "react-router-dom";
 import { getMovie } from "../services/api";
-// import Cast from "./Cast";
-
 
 const MovieDetailsPage = () => {
     const params = useParams();
     const [movie, setMovie] = useState(null);
     const location = useLocation();
     const navigate = useNavigate();
-
+    
 
     const onGoBack = () => {
         navigate(location.state.from);
-}
+    }
 
     useEffect(() => {
         getMovie(params.id).then(movie => setMovie(movie))
     }, [params.id])
+
+
     return ( 
         <>
         <div>
@@ -30,14 +30,19 @@ const MovieDetailsPage = () => {
                         <p><strong>Overviev</strong> <br /> {movie.overview}</p>
                         <h3><strong>Genres</strong> {movie.genres.name}</h3>
                     </>
-            )}
-            
+            )}           
             </div>
-            {/* <Routes>
-                <Route path={`${navigate}/cast`} element={<Cast/>}/>
-            </Routes> */}
-            <Outlet/>
             
+            <>
+                <ul>
+                    Additional information:
+                    <li>
+                        <Link to={`/movies/${params}/cast`}>Cast</Link>
+                    </li>
+                    
+                </ul>
+            </>
+            <Outlet />
         </>
     )
 }

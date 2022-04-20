@@ -7,8 +7,7 @@ const Cast = () => {
     const { movieId } = useParams();
 
     useEffect(() => {
-        getCastMovie(movieId).then(data=>setCast(data))
-
+        getCastMovie(movieId).then(data =>setCast(data))
     }, [movieId]);
 
     return (

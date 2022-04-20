@@ -20,7 +20,7 @@ export const getMovie = async (id) => {
     return data;
 };
 
-export const getCastMovie = async (movie_id) => { 
-    const { data } = await axios.get(`/movie/${movie_id}/credits?api_key=4867f71c2cc3334fef3a71f8c4706576`);
+export const getCastMovie = async (id) => {
+    const {data} = await axios.get(`/movie/${id}/credits?api_key=4867f71c2cc3334fef3a71f8c4706576`);
         return data;
 };
