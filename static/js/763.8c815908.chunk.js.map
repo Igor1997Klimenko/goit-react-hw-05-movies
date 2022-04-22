@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/763.8c815908.chunk.js","mappings":"0JAMA,UANmB,WACf,OACI,eAAIA,MAAO,CAACC,UAAU,UAAtB","sources":["components/PagesError.jsx"],"sourcesContent":["const PagesError = () => {\r\n    return (\r\n        <h1 style={{textAlign:\"center\"}}>ERROR!(((</h1>\r\n    )\r\n}\r\n\r\nexport default PagesError;"],"names":["style","textAlign"],"sourceRoot":""}
