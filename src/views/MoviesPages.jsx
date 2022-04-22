@@ -23,9 +23,7 @@ const MoviesPage = () => {
         setSearchParams({ query });
         getQueryMovie(query).then(res => setMovies(res));
         if (query.trim() === '') {
-            toast.error("Enter movie name", {
-                position: "top-center",
-            });
+            toast.error("Enter movie name");
         }
     }
 
